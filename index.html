@@ -5,16 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="מפת הדרך והלו״ז השנתי לסטודנטים במטרו-טק" />
   <title>מטרו-טק | מפת הדרך תשפ״ז</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body><div class="page-shell">
-  <header class="site-header"><a class="brand" href="#top" aria-label="מטרו-טק דף הבית"><span class="brand-mark">מטרו</span><span class="brand-track">טק</span><i></i><i></i><i></i></a><div class="header-title"><span class="eyebrow">מפת הדרך לסטודנטים</span><h1>מה מחכה לי השנה?</h1><p>כל האירועים, המחויבויות והמענקים בדרך להשמה מקצועית</p></div></header>
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><span class="section-kicker">תשפ״ז · 2026–2027</span><h2 id="hero-title">הדרך שלך מתחילה כאן</h2><p>בחרו תחנה כדי לראות את התוכן הרלוונטי למסלול שלכם. כל תחנה מקרבת אתכם אל היעד: עבודה בתחום הלימודים.</p></div><div class="destination hero-destination"><span>היעד הסופי</span><strong>עבודה בתחום הלימודים</strong><div class="destination-icon">★</div></div></section>
-    <section class="route-wrap" aria-label="רכבת המטרו של מסלול הלימודים"><div class="metro-sign">METRO<span>מסלול הסטודנט</span></div><div class="route-line"><div class="route-progress" id="route-progress"></div></div><div id="stations" class="stations"></div><div class="route-destination"><div class="destination-node">★</div><div><strong>עבודה בתחום הלימודים</strong><small>היעד הסופי</small></div></div></section>
-    <section class="stepup-route" aria-label="מסלול קהילת STEP-UP"><div class="stepup-line"></div><div class="stepup-station-mark">♛</div><div><span class="section-kicker">מסלול קהילתי נפרד</span><h2>קהילת הנשים STEP-UP</h2><p>מרחב של השראה, חיבור וצמיחה משותפת</p></div><button class="stepup-btn" data-id="stepup">למסלול STEP-UP ←</button></section>
-    <section class="toolbar" aria-label="בחירת תוכן"><div><span class="section-kicker">הלו״ז האישי שלי</span><h2 id="selected-title">שנה א׳ · כניסה למסלול</h2></div><div class="toolbar-actions"><button class="secondary-btn" id="all-events">הצג/י את כל האירועים</button><button class="primary-btn" id="print-page">הדפסת הלו״ז</button></div></section>
-    <div id="content" class="content-grid"></div><section class="empty-state"><span>✎</span><div><strong>יש מידע שחסר?</strong><p>הצוות יכול לעדכן אירועים, קישורים ומועדים בקלות בקובץ <code>data.js</code>.</p></div></section>
-  </main><footer><span class="brand small">מטרו<span>טק</span></span><span>מפת הדרך תשפ״ז · כל הזכויות שמורות</span></footer>
-</div><script src="data.js"></script><script src="app.js"></script></body></html>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="מטרו-טק דף הבית"><span class="brand-mark">מטרו</span><span class="brand-track">טק</span><i></i><i></i><i></i></a>
+      <div class="header-title"><span class="eyebrow">מפת הדרך לסטודנטים</span><h1>מה מחכה לי השנה?</h1><p>כל האירועים, המחויבויות והמענקים בדרך להשמה מקצועית</p></div>
+    </header>
+
+    <main id="top" class="main-shell">
+      <section class="hero-area" aria-label="הדמיה של רכבת מטרו">
+        <div class="tech-ring"></div>
+        <div class="train-scene">
+          <div class="train">
+            <div class="train-body">
+              <div class="train-front"></div>
+              <div class="train-window window-a"></div>
+              <div class="train-window window-b"></div>
+              <div class="train-window window-c"></div>
+              <div class="train-window window-d"></div>
+              <div class="train-front-glow"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="route-wrap" aria-label="מסלול המטרו של הליווי האישי">
+        <div class="route-line"> 
+          <div class="route-progress" id="route-progress"></div>
+        </div>
+        <div id="stations" class="stations"></div>
+        <div class="route-end-sign">
+          <span class="sign-text">עבודה בתחום הלימודים</span>
+        </div>
+      </section>
+
+      <section class="stepup-route" aria-label="מסלול קהילת STEP-UP">
+        <div class="stepup-rail"></div>
+        <div class="stepup-mark">♛</div>
+        <div class="stepup-copy">
+          <span class="section-kicker">מסלול קהילתי נפרד</span>
+          <h2>קהילת הנשים STEP-UP</h2>
+          <p>מרחב של השראה, חיבור וצמיחה משותפת</p>
+        </div>
+        <button class="stepup-btn" data-id="stepup">למסלול STEP-UP ←</button>
+      </section>
+
+      <section class="toolbar" aria-label="בחירת תוכן">
+        <div><span class="section-kicker">הלו״ז האישי שלי</span><h2 id="selected-title">שנה א׳ · כניסה למסלול</h2></div>
+        <div class="toolbar-actions">
+          <button class="secondary-btn" id="all-events">הצג/י את כל האירועים</button>
+          <button class="primary-btn" id="print-page">הדפסת הלו״ז</button>
+        </div>
+      </section>
+
+      <div id="content" class="content-grid"></div>
+    </main>
+
+    <section class="coordinators" aria-label="פרטי הרכזות">
+      <div class="contacts-header">
+        <h2>מי רכזת הליווי שלי?</h2>
+      </div>
+      <div class="contacts-grid">
+        <article class="contact-card card-sky">
+          <div class="card-top"><span>שעות זמינות בין 08:30–18:00</span></div>
+          <div class="contact-body">
+            <div class="avatar-circle">◉</div>
+            <div class="contact-copy">
+              <h3>אודליה אורי</h3>
+              <p>רכזת ליווי</p>
+              <div class="institution-tags">
+                <span>אוניברסיטת בר-אילן</span>
+                <span>אורט בראודה</span>
+                <span>הטכניון</span>
+                <span>אוניברסיטת תל אביב</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-meta">
+            <div class="phone-row"><span class="icon">☎</span><span>0502027866</span></div>
+            <div class="mail-row"><span class="icon">✉</span><span>courses@leshiny.org</span></div>
+          </div>
+        </article>
+
+        <article class="contact-card card-blue">
+          <div class="card-top"><span>שעות זמינות בין 08:30–18:00</span></div>
+          <div class="contact-body">
+            <div class="avatar-circle">◉</div>
+            <div class="contact-copy">
+              <h3>ימית ריזמן</h3>
+              <p>רכזת ליווי</p>
+              <div class="institution-tags">
+                <span>אפקה</span>
+                <span>HIT</span>
+                <span>אוניברסיטת בר-אילן</span>
+                <span>אוניברסיטת בן-גוריון</span>
+                <span>עזריאלי</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-meta">
+            <div class="phone-row"><span class="icon">☎</span><span>0543705775</span></div>
+            <div class="mail-row"><span class="icon">✉</span><span>yamitr@atidim.org.il</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <span class="brand small">מטרו<span>טק</span></span>
+      <span>מפת הדרך תשפ״ז · כל הזכויות שמורות</span>
+    </footer>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
