@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="מפת הדרך והלו״ז השנתי לסטודנטים במטרו-טק" />
+  <title>מטרו-טק | מפת הדרך תשפ״ז</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="מטרו-טק דף הבית"><span class="brand-mark">מטרו</span><span class="brand-track">טק</span><i></i><i></i><i></i></a>
+      <div class="header-title"><span class="eyebrow">מפת הדרך לסטודנטים</span><h1>מה מחכה לי השנה?</h1><p>כל האירועים, המחויבויות והמענקים בדרך להשמה מקצועית</p></div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy"><span class="section-kicker">תשפ״ז · 2026–2027</span><h2 id="hero-title">הדרך שלך מתחילה כאן</h2><p>בחרו תחנה כדי לראות את התוכן הרלוונטי למסלול שלכם. אפשר להוסיף כל אירוע ליומן ולתת לנו משוב.</p></div>
+        <div class="destination"><span>היעד הסופי</span><strong>השמה מקצועית</strong><div class="destination-icon">★</div></div>
+      </section>
+
+      <section class="route-wrap" aria-label="תחנות מפת הדרך">
+        <div class="route-line"><div class="route-progress" id="route-progress"></div></div>
+        <div id="stations" class="stations"></div>
+      </section>
+
+      <section class="toolbar" aria-label="בחירת תוכן">
+        <div><span class="section-kicker">הלו״ז האישי שלי</span><h2 id="selected-title">שנה א׳ · כניסה למסלול</h2></div>
+        <div class="toolbar-actions"><button class="secondary-btn" id="all-events">הצג/י את כל האירועים</button><button class="primary-btn" id="print-page">הדפסת הלו״ז</button></div>
+      </section>
+
+      <div id="content" class="content-grid"></div>
+      <section class="empty-state"><span>✎</span><div><strong>יש מידע שחסר?</strong><p>הצוות יכול לעדכן אירועים, קישורים ומועדים בקלות בקובץ <code>data.js</code>.</p></div></section>
+    </main>
+    <footer><span class="brand small">מטרו<span>טק</span></span><span>מפת הדרך תשפ״ז · כל הזכויות שמורות</span></footer>
+  </div>
+  <script src="data.js"></script><script src="app.js"></script>
+</body>
+</html>
